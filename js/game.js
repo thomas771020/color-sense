@@ -77,12 +77,42 @@ $(function docReady() {
     $('.mixed-color').css('background-color', 'rgb(' + r +', ' + g + ', ' + b + ')');
   }
 
-  function handleColorClicked(e) {
-    var idx = $(e.target).data('color-index');
-    if (++idx >= level) {
-      idx = 0;
+  function genGradualColors(color, colorMap){
+    var arr = [];
+    for(var i = 0; i < colorMap.length; i++){
+      //todo....
+      arr.push('rgb(' + r + ', 0, 0)');
     }
-    $(e.target).data('color-index', idx);
+  }
+
+  /* color is 'r', 'g' or 'b' */
+  function userPickerColor(color, callback){
+    var colors = genGradualColors(color, colorMap),
+        picker = $('.color-wheel-picker').colorWheelPicker(colors),
+        modal = $('#colorPickerModal').modal();
+
+    var idx = 1;
+    callback(idx);
+  }
+
+  function handleColorClicked(e) {
+
+
+
+    // console.log();
+
+    //open dialog
+    userPickerColor(function(idx){
+        $(e.target).data('color-index', idx);
+    });
+
+
+    // var idx = $(e.target).data('color-index');
+    // if (++idx >= level) {
+    //   idx = 0;
+    // }
+    // $(e.target).data('color-index', idx);
+
 
     renderColor();
     checkAnswer();

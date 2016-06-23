@@ -11,12 +11,14 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="css/base.css" />
     <link rel="stylesheet" type="text/css" href="circular-navigation/css/circular_menu.css" />
+    <link rel="stylesheet" type="text/css" href="https://thomas771020.github.io/ColorWheelPicker/css/ColorWheelPicker.css" />
     <link rel="stylesheet" type="text/css" href="css/game.css" />
 
     <script src="https://code.jquery.com/jquery-2.2.4.min.js" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
     <script src="circular-navigation/js/circular_menu.js" defer></script>
+    <script src="https://thomas771020.github.io/ColorWheelPicker/js/ColorWheelPicker.js"></script>
 
     <script src="js/game.js" defer></script>
   </head>
@@ -31,5 +33,27 @@
         <canvas class="target-color"></canvas>
       </div>
     </div>
+
+
+    <div class="modal fade" id="colorPickerModal" tabindex="-1" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Please choose a color</h4>
+          </div>
+          <div class="modal-body">
+              <div class="color-wheel-picker"></div>
+          </div>
+          <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Cencel</button>
+              <button type="button" class="btn btn-primary">choose</button>
+          </div>
+        </div>
+        <!-- /.modal-content -->
+      </div>
+      <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
   </body>
 </html>
